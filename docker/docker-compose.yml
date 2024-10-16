@@ -12,13 +12,13 @@ services:
       - BPL_JVM_THREAD_COUNT=50
       - BPL_DEBUG_ENABLED=true
       - BPL_DEBUG_PORT=8001
-      - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
       - SPRING_DATASOURCE_URL=jdbc:postgresql://polar-postgres:5432/polardb_catalog
       - SPRING_PROFILES_ACTIVE=testdata
   
-  config-server:
-    image: "config-server"
-    container_name: "config-server"
+  config-service:
+    image: "config-service"
+    container_name: "config-service"
     ports:
       - 8888:8888
       - 9888:9888
